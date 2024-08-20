@@ -43,11 +43,15 @@ mapping(address => unit) public balances;
 
 function mint(address_address, uint_value) public { 
  totalSupply +=  _value;
-balance[_address] += _value;
+    balance[_address] += _value;}
 
+
+function mint(address_address, uint_value) public {
  If ( balances[_address] >= _value)
 {totalSupply -=  _value;
 balances[_address] -= _value;}
+}
+
 }
 ## Getting Started
 

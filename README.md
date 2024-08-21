@@ -1,74 +1,61 @@
-# First-Solidity-Project
+# MyToken
 
-
-# Overview
-
-The Solidity smart contract would meet the following requirements:
-
-1. Token Details: Store public variables for token name, abbreviation, and total supply.
-2. Balance Mapping: Map addresses to balances (address => uint).
-3. Mint Function: Increase total supply and balance of a given address by a specified value.
-4. Burn Function: Decrease total supply and balance of a given address by a specified value, with conditional checks to prevent overdrafts.
-
-Requirements
-
-- Solidity version: 0.8.18
-- Public variables for token details
-- Mapping of addresses to balances
-- Mint function with address and value parameters
-- Burn function with address and value parameters, including conditional checks
-
-# Project Structure
-
-MyToken.sol: The main contract file containing the implementation
-
+This contract provides basic functionality for creating, managing, and transferring a cryptocurrency token. It can be used as a starting point for more complex token implementations or as a simple example for learning Solidity.
 
 ## Description
 
-This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. The contract has mint and burn functions.The mint function increases the totalSupply by the given value, while the burn function reduces the balances and total Supply of token by the given value.
-This program serves as a simple and straightforward introduction to Solidity programming, and can be used as a stepping stone for more complex projects in the future.
+This Solidity project is a basic implementation of a cryptocurrency token, that allows for the creation, management, and transfer of a digital asset, with features including token information storage, balance mapping, minting and burning functions to increase or decrease the total supply and individual account balances, and conditional checks to ensure secure and valid transactions.
 
-
-# myToken 
-
-contract MyToken {
-
-    
-string public tokenName = "APEX"
-string public tokenAbbrv = "APX"
-unit public totalSupply = 0; 
-
-
-mapping(address => unit) public balances;
-
-function mint(address_address, uint_value) public { 
- totalSupply +=  _value;
-    balance[_address] += _value;}
-
-
-function mint(address_address, uint_value) public {
- If ( balances[_address] >= _value)
-{totalSupply -=  _value;
-balances[_address] -= _value;}
-}
-
-}
 ## Getting Started
 
+### Installing
 
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile myToken.sol" button.
+To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
+
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., MyToken.sol). Copy and paste the following code into the file:
+
+contract MyToken  {
+
+    string public tokenName = "APEX";
+    string public tokenAbbrv = "APX";
+    uint256 public totalSupply = 0;   
+     
+    mapping(address => uint256) public balances; 
+    
+    function mint(address _address, uint256 _value) public { 
+        totalSupply += _value;
+        balances[_address] += _value; }
+        
+        function burn (address _address, uint256 _value) public { 
+
+        if (balances[_address] >= _value) {
+            totalSupply -= _value;
+            balances[_address] -= _value; 
+        }
+    }
+
+}
+
+### Executing program
 
 
-Click solidity compiler icon
-Ensure the compile checkbox is checked and then click Compile myToken
-Then click Deply & run transaction icon below
-Then click deploy(orange button)
-Click the small copy button at the right under ACCOUNT
-Move downwards and click the arrow button under mint, then
-Paste the the copied value into the  _address input field
-Then put 1000 in the _value input field and click transact.
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.26" (or another compatible version ), and then click on the "Compile MyToken.sol" button.
+
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "MYTOKEN" contract from the dropdown menu, and then click on the "Deploy" button.
+
+* Once the contract is deployed, click the "MYTOKEN" dropdown menu to call the mint and burn functions. 
+* To call the mint function, click the drop down button beside the mint button, then copy the Account(MyToken) address and paste it in the _address input box and put in a number value in the _value input field.  
+* Finally, click on the "transact" button to execute the function and retrieve the totalSupply and balances. They would reveal the totalSupply and balances values.
+* Repeate the same procedure to execute the burn function.
+Note that burn function executes only if the balances token is greater or equal to the inputed amount.
+
+
+## Authors
+
+Dunsin Akinbo
+(https://www.linkedin.com/in/oluwadunsin-akinbo-82733b23a/)
 
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the [MIT License ] License 

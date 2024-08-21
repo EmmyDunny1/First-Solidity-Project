@@ -12,29 +12,8 @@ This Solidity project is a basic implementation of a cryptocurrency token, that 
 
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 
-Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., MyToken.sol). Copy and paste the following code into the file:
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., MyToken.sol). 
 
-contract MyToken  {
-
-    string public tokenName = "APEX";
-    string public tokenAbbrv = "APX";
-    uint256 public totalSupply = 0;   
-     
-    mapping(address => uint256) public balances; 
-    
-    function mint(address _address, uint256 _value) public { 
-        totalSupply += _value;
-        balances[_address] += _value; }
-        
-        function burn (address _address, uint256 _value) public { 
-
-        if (balances[_address] >= _value) {
-            totalSupply -= _value;
-            balances[_address] -= _value; 
-        }
-    }
-
-}
 
 ### Executing program
 
@@ -53,9 +32,6 @@ Note that burn function executes only if the balances token is greater or equal 
 If you would like to contribute to this project, feel free to fork the repository, make your changes, and submit a pull request. Contributions are welcome! 
 
 ## Authors
-
-Dunsin Akinbo
-(https://www.linkedin.com/in/oluwadunsin-akinbo-82733b23a/)
 
 
 ## License

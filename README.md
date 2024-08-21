@@ -49,6 +49,8 @@ Once the code is compiled, you can deploy the contract by clicking on the "Deplo
 * Repeate the same procedure to execute the burn function.
 Note that burn function executes only if the balances token is greater or equal to the inputed amount.
 
+## Contributing
+If you would like to contribute to this project, feel free to fork the repository, make your changes, and submit a pull request. Contributions are welcome! 
 
 ## Authors
 
@@ -58,4 +60,4 @@ Dunsin Akinbo
 
 ## License
 
-This project is licensed under the [MIT License ] License 
+This project is licensed under the MIT License 
